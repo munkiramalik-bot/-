@@ -1,2 +1,492 @@
-# -
-自我介绍
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>攀登计划进阶版班主任 - 妮妮的自我介绍</title>
+    <style>
+        :root {
+            --primary-color: #FF6B6B; /* 热情活力的珊瑚橘 */
+            --secondary-color: #2C3E50; /* 专业沉稳的深空蓝 */
+            --accent-color: #FFE66D; /* 温暖亮眼的点缀黄 */
+            --bg-light: #F7F9FC;
+            --text-main: #333333;
+            --text-sub: #666666;
+            --white: #FFFFFF;
+            --gradient-bg: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* 顶部声波动画装饰 */
+        .sound-wave {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+            height: 40px;
+            margin-bottom: 20px;
+        }
+        .bar {
+            width: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+            animation: wave 1s ease-in-out infinite;
+        }
+        .bar:nth-child(1) { height: 10px; animation-delay: 0.1s; }
+        .bar:nth-child(2) { height: 20px; animation-delay: 0.2s; }
+        .bar:nth-child(3) { height: 30px; animation-delay: 0.3s; }
+        .bar:nth-child(4) { height: 20px; animation-delay: 0.4s; }
+        .bar:nth-child(5) { height: 10px; animation-delay: 0.5s; }
+
+        @keyframes wave {
+            0%, 100% { transform: scaleY(1); }
+            50% { transform: scaleY(1.5); }
+        }
+
+        /* 头部区域 */
+        header {
+            background: var(--gradient-bg);
+            color: var(--white);
+            padding: 60px 20px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* 麦克风图标装饰 */
+        header::before {
+            content: "🎙️";
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 40px;
+            opacity: 0.2;
+            transform: rotate(-15deg);
+        }
+        header::after {
+            content: "🎧";
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 40px;
+            opacity: 0.2;
+            transform: rotate(15deg);
+        }
+
+        .avatar-box {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid var(--white);
+            overflow: hidden;
+            margin: 0 auto 20px;
+            background-color: #fff;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        .avatar-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        /* 内容容器 */
+        .container {
+            max-width: 800px;
+            margin: -30px auto 40px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* 卡片通用样式 */
+        .card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-weight: bold;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 12px;
+        }
+
+        /* 个人简介 */
+        .intro-text {
+            color: var(--text-sub);
+            font-size: 15px;
+            text-align: justify;
+        }
+
+        /* 作品集 */
+        .works-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .work-item {
+            background: var(--bg-light);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-main);
+            transition: all 0.3s;
+            border: 1px solid transparent;
+        }
+        .work-item:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+        .work-icon {
+            font-size: 30px;
+            margin-bottom: 8px;
+            display: block;
+        }
+        .work-title {
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .work-desc {
+            font-size: 12px;
+            color: var(--text-sub);
+            margin-top: 4px;
+        }
+
+        /* 我能为你做什么 */
+        .service-list {
+            list-style: none;
+        }
+        .service-item {
+            display: flex;
+            margin-bottom: 18px;
+            align-items: flex-start;
+        }
+        .service-item:last-child {
+            margin-bottom: 0;
+        }
+        .service-icon {
+            min-width: 40px;
+            height: 40px;
+            background: rgba(255, 107, 107, 0.1);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            margin-right: 15px;
+        }
+        .service-content h3 {
+            font-size: 16px;
+            color: var(--secondary-color);
+            margin-bottom: 4px;
+        }
+        .service-content p {
+            font-size: 14px;
+            color: var(--text-sub);
+        }
+
+        /* 学员评价 */
+        .testimonial {
+            background: var(--bg-light);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+        .testimonial::before {
+            content: "“";
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            font-size: 40px;
+            color: var(--primary-color);
+            opacity: 0.2;
+            font-family: serif;
+        }
+        .testimonial-text {
+            font-size: 14px;
+            color: var(--text-sub);
+            font-style: italic;
+            margin-bottom: 10px;
+            padding-left: 20px;
+        }
+        .testimonial-author {
+            text-align: right;
+            font-size: 13px;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+        .student-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+            vertical-align: middle;
+            border: 2px solid #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* 往期学员 */
+        .alumni-images {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .alumni-img-box {
+            aspect-ratio: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #eee;
+        }
+        .alumni-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* 我想对你说 */
+        .quote-card {
+            background: var(--gradient-bg);
+            color: white;
+            text-align: center;
+            padding: 40px 30px;
+        }
+        .quote-card .section-title {
+            color: white;
+            border-left-color: var(--accent-color);
+            justify-content: center;
+        }
+        .quote-text {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .quote-highlight {
+            font-size: 18px;
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        /* 联系方式 */
+        .contact-card {
+            text-align: center;
+        }
+        .qr-code-box {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 15px;
+            background: #fff;
+            padding: 10px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        .qr-code-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .contact-tip {
+            font-size: 14px;
+            color: var(--text-sub);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-sub);
+            font-size: 12px;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 600px) {
+            .works-grid {
+                grid-template-columns: 1fr;
+            }
+            .alumni-images {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 头部区域 -->
+    <header>
+        <div class="avatar-box">
+            <!-- 替换为您的真实头像 -->
+            <img src="https://fakeimg.pl/200x200/FF6B6B/FFF/?text=XX&font=lobster" alt="班主任头像">
+        </div>
+        <h1>你好，我是XX</h1>
+        <div class="subtitle">喜播教育攀登计划进阶课班主任</div>
+        <div class="sound-wave" style="margin-top: 20px;">
+            <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+            <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- 个人简介 -->
+        <div class="card">
+            <div class="section-title">🎤 个人简介</div>
+            <p class="intro-text">
+                我是妮妮，你的进阶课班主任。浙江传媒学院影视配音专业科班出身，深耕有声行业多年的我，拥有丰富的配音实战与带班经验。我深知从新手到成熟主播的每一个痛点，不仅能为你提供专业的技能指导，更是你有声之路上的坚实后盾💗
+            </p>
+        </div>
+
+        <!-- 作品集 -->
+        <div class="card">
+            <div class="section-title">🎧 作品集</div>
+            <div class="works-grid">
+                <!-- 喜马拉雅主页链接，替换href -->
+                <a href="https://www.ximalaya.com" target="_blank" class="work-item">
+                    <span class="work-icon">🦊</span>
+                    <div class="work-title">喜马拉雅主播主页</div>
+                    <div class="work-desc">点击直接跳转收听</div>
+                </a>
+                <!-- 作品集链接，替换href -->
+                <a href="https://www.ximalaya.com" target="_blank" class="work-item">
+                    <span class="work-icon">🎵</span>
+                    <div class="work-title">音视频作品集</div>
+                    <div class="work-desc">旁白/角色音/剧综展示</div>
+                </a>
+            </div>
+            <div style="margin-top: 15px;">
+                <!-- 视频播放器占位，可替换video标签的src -->
+                <video width="100%" controls style="border-radius: 10px; background: #000;">
+                    <source src="your-video-file.mp4" type="video/mp4">
+                    您的浏览器不支持视频播放，可点击上方链接访问。
+                </video>
+            </div>
+        </div>
+
+        <!-- 我能为你做什么 -->
+        <div class="card">
+            <div class="section-title">🚀 我能为你做什么</div>
+            <ul class="service-list">
+                <li class="service-item">
+                    <div class="service-icon">🔍</div>
+                    <div class="service-content">
+                        <h3>声音诊断</h3>
+                        <p>1v1听音分析，精准声线定位，为你指明声音提升的最优方向，助你找到最适合自己的中音赛道。</p>
+                    </div>
+                </li>
+                <li class="service-item">
+                    <div class="service-icon">✍️</div>
+                    <div class="service-content">
+                        <h3>作品打磨</h3>
+                        <p>旁白+角色音逐句拆解，从情绪到咬字，提供针对性改进建议，让你的演播质感瞬间升级。</p>
+                    </div>
+                </li>
+                <li class="service-item">
+                    <div class="service-icon">🎬</div>
+                    <div class="service-content">
+                        <h3>剧组实战</h3>
+                        <p>协助统筹、对接各工种，帮你跨越新手组队门槛，实现从练习室到真实剧组的无缝衔接。</p>
+                    </div>
+                </li>
+                <li class="service-item">
+                    <div class="service-icon">🗺️</div>
+                    <div class="service-content">
+                        <h3>职业规划</h3>
+                        <p>提供从日常练习到实战接单的全链路陪伴，为你规划清晰的有声职业发展路径。</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 学员评价 -->
+        <div class="card">
+            <div class="section-title">💬 学员评价</div>
+            
+            <div class="testimonial">
+                <!-- 替换为真实学员头像 -->
+                <img src="https://fakeimg.pl/80x80/eeeeee/999/?text=User1" alt="学员头像" class="student-avatar">
+                <p class="testimonial-text">妮妮班班在我专辑断更最焦虑时，连夜帮我找角色搭档，她不只是班主任，更是托底的朋友。</p>
+                <div class="testimonial-author">—— xx</div>
+            </div>
+
+            <div class="testimonial">
+                <!-- 替换为真实学员头像 -->
+                <img src="https://fakeimg.pl/80x80/eeeeee/999/?text=User2" alt="学员头像" class="student-avatar">
+                <p class="testimonial-text">进阶班一路跟着妮妮，她从不嫌弃我普通话不标准，反而说‘你的烟火气是市场稀缺的珍宝’。</p>
+                <div class="testimonial-author">—— xx</div>
+            </div>
+        </div>
+
+        <!-- 往期学员 -->
+        <div class="card">
+            <div class="section-title">🌟 往期学员</div>
+            <div class="alumni-images">
+                <!-- 替换为真实往期学员结业/合影图片 -->
+                <div class="alumni-img-box"><img src="https://fakeimg.pl/300x300/FFE66D/333/?text=案例1" alt="案例1"></div>
+                <div class="alumni-img-box"><img src="https://fakeimg.pl/300x300/FFE66D/333/?text=案例2" alt="案例2"></div>
+                <div class="alumni-img-box"><img src="https://fakeimg.pl/300x300/FFE66D/333/?text=案例3" alt="案例3"></div>
+            </div>
+            <p style="font-size:14px; color:var(--text-sub); text-align:center;">见证每一次破茧成蝶的声音蜕变</p>
+        </div>
+
+        <!-- 我想对你说 -->
+        <div class="card quote-card">
+            <div class="section-title">💌 我想对你说</div>
+            <p class="quote-text">
+                “没有不好的声音，只有还没找到打开方式的人。”
+                <span class="quote-highlight">别怕声音不好听或普通话不标准，<br>我会陪你从不敢开口到自信录制。</span>
+            </p>
+        </div>
+
+        <!-- 联系方式 -->
+        <div class="card contact-card">
+            <div class="section-title" style="justify-content: center;">📱 联系我</div>
+            <div class="qr-code-box">
+                <!-- 替换href为二维码图片链接 -->
+                <img src="https://fakeimg.pl/200x200/ffffff/2C3E50/?text=企微二维码" alt="企业微信二维码">
+            </div>
+            <p class="contact-tip">扫描上方二维码，添加我的企业微信<br>开启你的有声攀登之旅</p>
+        </div>
+
+    </div>
+
+    <footer>
+        © 2026 喜播攀登计划 · 用声音绽放无限可能
+    </footer>
+
+</body>
+</html>
